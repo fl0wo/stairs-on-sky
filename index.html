@@ -6,12 +6,28 @@
 
     <div class="container">
         <div class="marg-bot">
-            <p>Gap</p>
-            <input type="range" min="0" max="500" value="50" id="gap_slider">
+            <p>K = <output id="k-val"></output></p>
+            <input type="range" min="0" max="1000" value="100" id="k" oninput="set_k()">
         </div>
 
         <div class="marg-bot">
-            <canvas id="can" width="500" height="350"></canvas>
+
+            <div class="sides">
+                <div class="left">
+                    <p>W = <output id="w-val"></output></p>
+                    <input type="range" min="0" max="20" value="10" id="w" oninput="set_w()">
+                </div>
+
+                <div class="right">
+                    <p>H = <output id="h-val"></output></p>
+                    <input type="range" min="100" max="800" value="500" id="h" oninput="set_h()">
+                </div>
+            </div>
+
+        </div>
+
+        <div class="marg-bot">
+            <canvas id="can" width="600" height="600"></canvas>
         </div>
         <p>Stars by fl0rian</p>
 
