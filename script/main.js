@@ -22,8 +22,8 @@ let h = c.clientHeight;
 let horizontal_stars = 12;
 let vertical_stars = 12;
 
-let w_gap = w / horizontal_stars; // w / 5;
-let h_gap = h / vertical_stars; // h / 5;
+let w_gap = 50; // w / 5;
+let h_gap = 50; // h / 5;
 
 let border = 50;
 
@@ -140,37 +140,37 @@ function init() {
             draw_lines(border, y, w - border, y);
     }
 
-    // // basso sx
-    // for (let x1 = border; x1 <= w - border; x1 += w_gap) {
-    //     for (let y0 = border; y0 <= h - border; y0 += h_gap) {
-    //         if (distance2(border, y0, x1, h - border) >= K)
-    //             draw_lines(border, y0, x1, h - border);
-    //     }
-    // }
+    // basso sx
+    for (let x1 = border; x1 <= w - border; x1 += w_gap) {
+        for (let y0 = border; y0 <= h - border; y0 += h_gap) {
+            if (distance2(border, y0, x1, h - border) >= K)
+                draw_lines(border, y0, x1, h - border);
+        }
+    }
 
     // // basso dx
-    // for (let x1 = border; x1 <= w - border; x1 += w_gap) {
-    //     for (let y0 = border; y0 <= h - border; y0 += h_gap) {
-    //         if (distance2(w - border, y0, x1, h - border) >= K)
-    //             draw_lines(w - border, y0, x1, h - border);
-    //     }
-    // }
+    for (let x1 = border; x1 <= w - border; x1 += w_gap) {
+        for (let y0 = border; y0 <= h - border; y0 += h_gap) {
+            if (distance2(w - border, y0, x1, h - border) >= K)
+                draw_lines(w - border, y0, x1, h - border);
+        }
+    }
 
     // // // alto dx
-    // for (let y1 = border; y1 <= h - border; y1 += h_gap) {
-    //     for (let x0 = border; x0 <= w - border; x0 += w_gap) {
-    //         if (distance2(x0, border, w - border, y1) >= K)
-    //             draw_lines(x0, border, w - border, y1);
-    //     }
-    // }
+    for (let y1 = border; y1 <= h - border; y1 += h_gap) {
+        for (let x0 = border; x0 <= w - border; x0 += w_gap) {
+            if (distance2(x0, border, w - border, y1) >= K)
+                draw_lines(x0, border, w - border, y1);
+        }
+    }
 
-    // // alto sx
-    // for (let y1 = border; y1 <= h - border; y1 += h_gap) {
-    //     for (let x0 = border; x0 <= w - border; x0 += w_gap) {
-    //         if (distance2(x0, border, border, y1) >= K)
-    //             draw_lines(x0, border, border, y1);
-    //     }
-    // }
+    // alto sx
+    for (let y1 = border; y1 <= h - border; y1 += h_gap) {
+        for (let x0 = border; x0 <= w - border; x0 += w_gap) {
+            if (distance2(x0, border, border, y1) >= K)
+                draw_lines(x0, border, border, y1);
+        }
+    }
 
 
 
